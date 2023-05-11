@@ -1,10 +1,11 @@
+
 body {
-  margin: 0;
-  height: 100vh;
   background-color: #e9ecef;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'arial', sans-serif;
   box-sizing: border-box;
   padding: 130px 0;
+  margin: 0;
+  height: 100vh;
 }
 
 main {
@@ -12,35 +13,26 @@ main {
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  width: 40%;
-  min-width: 450px;
-  font-size: 17px;
   box-sizing: border-box;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   margin: 0 auto;
+  width: 40%;
+  min-width: 450px;
+  font-size: 17px;
 }
 
 #header {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  width: 100%;
   padding: 30px 30px 20px;
   box-sizing: border-box;
   margin: 0;
 }
 
-#todos-list {
-  width: 100%;
-  min-height: 67px;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  font-weight: 300;
-}
-
-#input-task {
+#new-todo {
   width: 100%;
   font-size: 15px;
   padding: 15px 30px;
@@ -51,15 +43,29 @@ main {
   color: #8b8c89;
 }
 
-#todos-list li {
+#new-todo::placeholder {
+  color: #a5a58d;
+  font-style: italic;
+}
+
+#todo-list {
+  width: 100%;
+  min-height: 67px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-weight: 300;
+}
+
+#todo-list li {
   display: flex;
   justify-content: space-between;
-  padding: 3px 25px;
+  padding: 15px 25px;
   box-sizing: border-box;
   border-bottom: 1px solid #e9ecef;
 }
 
-#todos-list li div {
+#todo-list li div {
   display: flex;
   align-items: center;
 }
@@ -72,7 +78,36 @@ main {
   align-self: flex-start;
 }
 
-#completed {
+.fa-check {
+  display: none;
+}
+
+.todo-task.focus {
+  background-color: rgba(239, 211, 215, 0.2);
+}
+
+.todo-task.focus .todo-input {
+  background-color: rgba(239, 211, 215, 0.2);
+}
+
+button {
+  min-width: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+i {
+  font-size: 17px;
+  color: #a5a58d;
+}
+
+#clear-completed {
   width: 100%;
   text-align: center;
   cursor: pointer;
@@ -85,7 +120,10 @@ main {
   border-bottom-right-radius: 8px;
 }
 
-p {
-  display: inline;
-  padding: 1rem;
+.move-task {
+  cursor: move;
+}
+
+.dragging {
+  border: 1px solid #a5a58d !important;
 }
