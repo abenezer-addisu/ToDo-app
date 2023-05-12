@@ -1,36 +1,22 @@
 import './style.css';
+import Tasks from './modules/todos.js';
 
-const todosListEl = document.getElementById('todos-list');
+const tasks = new Tasks();
 
-const todos = [
-  {
-    description: 'task 1',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'task 2',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'task 3',
-    completed: false,
-    index: 3,
-  },
-];
+// display the todo list from storage
+tasks.displayList();
 
-let content = '';
-// RENDER TODOS
-todos.forEach((todo, index) => {
-  content += `
-    <li id="todo-item">
-      <div id=${index}>
-        <span class="bi-square"></span>
-        <p>${todo.description}</p>
-        <p>${todo.completed}</p>
-      </div>
-    </li>`;
+// add new task
+const newInput = document.querySelector('#new-todo');
+newInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && newInput.value) {
+    tasks.add(newInput.value);
+    newInput.value = '';
+  }
 });
 
-todosListEl.innerHTML = content;
+// refresh the list
+const refreshBtn = document.querySelector('#refresh-list');
+refreshBtn.addEventListener('click', () => {
+  document.location.reload();
+});
