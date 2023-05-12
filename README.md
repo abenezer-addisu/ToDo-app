@@ -95,7 +95,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Not available for now
+>  [Live Demo Link](https://abenezer-addisu.github.io/ToDoList/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,7 +123,7 @@ Clone this repository to your desired folder:
 Example commands:
 
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/abenezer-addisu/ToDoList.git
 
 ### Install
 
@@ -140,13 +140,11 @@ Example command:
 
 To run the project, execute the following command:
 
-
-Example command:
-Open index.html in your browser
+npm start 
 
 ### Deployment
 
-You can deploy this project using:
+You can deploy this project using: https://abenezer-addisu.github.io/ToDoList/
 
 github pages
 
@@ -206,6 +204,6 @@ I would like to thank Microverse for initiating the idea behind the project.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./License) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
