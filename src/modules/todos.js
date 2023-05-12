@@ -1,3 +1,6 @@
+import CompletedTasksStatus from './tasksCompleted.js';
+
+const status = new CompletedTasksStatus();
 export default class Tasks {
   constructor() {
     this.tasksArray = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -9,7 +12,7 @@ export default class Tasks {
   }
 
   displayList = () => {
-    // display items
+    // display tasks
     const todoContainer = document.querySelector('#todo-list');
     todoContainer.innerHTML = '';
     this.tasksArray.forEach((task) => {
@@ -69,6 +72,8 @@ export default class Tasks {
         }
       });
     });
+    // complete task and update status
+    status.completeTask(this.tasksArray);
   }
 
   add = (value) => {

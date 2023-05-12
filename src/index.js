@@ -1,7 +1,9 @@
 import './style.css';
 import Tasks from './modules/todos.js';
+import CompletedTasksStatus from './modules/tasksCompleted.js';
 
 const tasks = new Tasks();
+const status = new CompletedTasksStatus();
 
 // display the todo list from storage
 tasks.displayList();
@@ -20,3 +22,6 @@ const refreshBtn = document.querySelector('#refresh-list');
 refreshBtn.addEventListener('click', () => {
   document.location.reload();
 });
+
+// delete all tasks completed
+status.clearCompleted(tasks);

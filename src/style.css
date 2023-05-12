@@ -33,18 +33,18 @@ main {
 }
 
 #new-todo {
-  width: 100%;
-  font-size: 15px;
   padding: 15px 30px;
   border-radius: 4px;
   border: 1px solid #e9ecef;
   box-sizing: border-box;
   outline: none;
   color: #8b8c89;
+  width: 100%;
+  font-size: 15px;
 }
 
 #new-todo::placeholder {
-  color: #a5a58d;
+  color: gainsboro;
   font-style: italic;
 }
 
@@ -78,28 +78,42 @@ main {
   align-self: flex-start;
 }
 
+.todo-input:focus {
+  background-color: yellow;
+}
+
 .fa-check {
+  display: none;
+  color: green;
+}
+
+.todo-task.active .fa-check {
+  display: block;
+}
+
+.todo-task.active .fa-square {
   display: none;
 }
 
-.todo-task.focus {
-  background-color: rgba(239, 211, 215, 0.2);
+.todo-task.active .todo-input {
+  background-color: yellow;
+  text-decoration: line-through;
 }
 
-.todo-task.focus .todo-input {
-  background-color: rgba(239, 211, 215, 0.2);
+.todo-task.focus {
+  background-color: yellow;
 }
 
 button {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
   min-width: 30px;
   cursor: pointer;
   background-color: transparent;
   border: none;
   font-size: 1rem;
   font-family: inherit;
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
 }
 
 i {
@@ -107,7 +121,7 @@ i {
   color: #a5a58d;
 }
 
-#clear-completed {
+#completed-tasks {
   width: 100%;
   text-align: center;
   cursor: pointer;
@@ -118,12 +132,4 @@ i {
   background-color: #f5f3f4;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-}
-
-.move-task {
-  cursor: move;
-}
-
-.dragging {
-  border: 1px solid #a5a58d !important;
 }
