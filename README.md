@@ -95,7 +95,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
->  [Live Demo Link](https://abenezer-addisu.github.io/ToDoList/dist)
+>  [Live Demo Link](https://abenezer-addisu.github.io/TO_DO_List-Code_review/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
